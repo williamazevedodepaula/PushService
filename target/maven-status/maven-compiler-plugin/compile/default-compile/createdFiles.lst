@@ -1,0 +1,4 @@
+com\ceasa\pushservice\MsgResponse.class
+com\ceasa\pushservice\PushServiceWs.class
+com\ceasa\pushservice\SenderResponse.class
+org\netbeans\rest\application\config\ApplicationConfig.class
