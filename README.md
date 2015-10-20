@@ -6,7 +6,7 @@ Este Web Service permite enviar uma mensagem a uma lista de destinatários Andro
 
 Uma vez hospedado, utilizar o serviço a partir da URL:
 
-http://host:port/PushService/push/push/send/apiKey/idList/msg
+http://host:port/PushService/push/push/send/apiKey/idList/title/msg
 
 onde:
 
@@ -23,6 +23,8 @@ onde:
  Caso deseja-se enviar a mensagem para um único id, este parâmetro pode conter apenas o id desejado, sem necessidade de estar formatado como json array. Por exemplo, para enviar para o id "ggggggggggggg", pode-se enviar apenas a string:
  
 ggggggggggggg
+
+<b>title</b> - O título da mensagem a ser enviada. Aparece no aparelho como titulo da notificação.
 
 <b>msg</b> - A mensagem a ser enviada.
 
@@ -53,11 +55,11 @@ Abaixo segue um exemplo para enviar a mensagem "teste" para os ids "ddddddddddd"
 
 A requisição é feita na URL:
 
-http://host:port/PushService/push/push/send/apitestexxxxxx/["ddddddddddd","eeeeeeeeeeeee","fffffffffff"]/teste
+http://host:port/PushService/push/push/send/apitestexxxxxx/["ddddddddddd","eeeeeeeeeeeee","fffffffffff"]/titulo/teste
 
 Para enviar para um único id, (exemplo: ggggggggggggg) utilizar a url:
 
-"http://host:port/PushService/push/push/send/apitestexxxxxx/ggggggggggggg/teste".
+"http://host:port/PushService/push/push/send/apitestexxxxxx/ggggggggggggg/titulo/teste".
 
 <h3>Resposta</h3>
 
