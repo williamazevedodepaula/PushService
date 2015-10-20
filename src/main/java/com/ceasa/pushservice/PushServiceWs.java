@@ -85,7 +85,8 @@ public class PushServiceWs {
      * exemplo, para enviar para o id "ggggggggggggg", pode-se enviar apenas a
      * string "ggggggggggggg"
      * .<p/>
-     *
+     * 
+     * @param title O titulo da mensagem a ser exibido na notificação
      *
      * @param msg A mensagem a ser enviada.<p/>
      *
@@ -127,10 +128,11 @@ public class PushServiceWs {
      *
      */
     @GET
-    @Path("/send/{apiKey}/{regIds}/{msg}/")
+    @Path("/send/{apiKey}/{regIds}/{title}/{msg}/")
     @Produces("application/json")
     public SenderResponse sendMsg(@PathParam("apiKey") String apiKey,
             @PathParam("regIds") String regIds,
+            @PathParam("title") String title,
             @PathParam("msg") String msg) {
         System.out.println("Executando serviço de envio de mensagens.");
         SenderResponse response = new SenderResponse();
@@ -162,7 +164,7 @@ public class PushServiceWs {
                     Calendar cal = Calendar.getInstance();
                     Message mensagem = new Message.Builder()
                             .addData("message", msg)
-                            .addData("title", "Evento Report Online")
+                            .addData("title", title)
                             //.addData("msgcnt",Integer.toString(cnt))
                             .addData("notId", Integer.toString((int) cal.getTimeInMillis()))
                             .timeToLive(60)
